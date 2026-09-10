@@ -3,11 +3,7 @@
 Mobile open-world game prototype for Android + iPhone.
 
 ## Vision
-A Kazakhstan-inspired open-world action game with Kazakh UI, missions, vehicles, NPCs, money, police, shops and a mobile-first control scheme.
-
-## Monetization
-- Ads
-- In-app purchases
+A Kazakhstan-inspired open-world action game with Kazakh UI, missions, vehicles, NPCs, money, police, shops and mobile-first controls.
 
 ## Prototype 0.1
 - Third-person player movement
@@ -16,7 +12,12 @@ A Kazakhstan-inspired open-world action game with Kazakh UI, missions, vehicles,
 - Kazakh HUD strings
 - Mission/money foundation
 
+## Monetization
+- Ads
+- In-app purchases
+
 ## Unity
 Target: Unity 6 LTS, 3D URP, Android + iOS.
 
-> This repository currently contains the source foundation. Art, scenes and platform builds are added through Unity Editor.
+## Repository status
+Source foundation is being prepared here. Unity scenes, 3D assets and platform builds require Unity Editor on a computer; this repo is the project source of truth.
