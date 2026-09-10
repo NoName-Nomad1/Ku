@@ -15,6 +15,9 @@ namespace QazaqCity.Player
         private bool running;
         private float verticalVelocity;
 
+        public float GetMoveAmount() => moveInput.magnitude;
+        public bool IsGrounded() => controller != null && controller.isGrounded;
+
         private void Awake()
         {
             controller = GetComponent<CharacterController>();
@@ -22,7 +25,6 @@ namespace QazaqCity.Player
                 cameraTransform = Camera.main.transform;
         }
 
-        // UI joystick осы әдісті шақырады.
         public void SetMoveInput(Vector2 input) => moveInput = Vector2.ClampMagnitude(input, 1f);
         public void SetRunning(bool value) => running = value;
 
@@ -35,12 +37,11 @@ namespace QazaqCity.Player
             forward.Normalize();
             right.Normalize();
 
-            Vector3 direction = (forward * moveInput.y + right * moveInput.x);
+            Vector3 direction = forward * moveInput.y + right * moveInput.x;
             if (direction.sqrMagnitude > 0.01f)
-            {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Time.deltaTime);
-            }
 
+            if (controller == null) return;
             if (controller.isGrounded) verticalVelocity = -2f;
             else verticalVelocity += Physics.gravity.y * Time.deltaTime;
 
